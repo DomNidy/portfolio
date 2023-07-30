@@ -10,38 +10,25 @@ import {
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { useRouter } from "next/navigation";
+import { AiOutlineGithub } from "react-icons/ai";
 
 export default function Navbar() {
-  const router = useRouter();
   return (
-    <div className="flex w-screen justify-between">
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Home</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
-                <h3>Home page here</h3>
-              </NavigationMenuLink>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Contact</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
-                <h3>Contact</h3>
-              </NavigationMenuLink>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+    <div className="flex w-full h-10  z-10 justify-between items-center  bg-clip-border backdrop-blur bg-opacity-30 bg-zinc-100 dark:bg-black dark:bg-opacity-20 fixed ">
+      <div className="flex md:w-80 gap-4 items-center">
+        <h3 className="text-foreground dark:text-muted-foreground  dark:hover:text-foreground  font-semibold tracking-tight p-1 rounded-xl hover:bg-secondary cursor-pointer transition-all duration-100">
+          Home
+        </h3>
+        <h3 className="text-foreground dark:text-muted-foreground  dark:hover:text-foreground  font-semibold tracking-tight p-1 rounded-xl hover:bg-secondary cursor-pointer transition-all duration-100">
+          About Me
+        </h3>
+        <h3
+          onClick={() => window.open("https://github.com/DomNidy")}
+          className="text-3xl text-foreground dark:text-muted-foreground  dark:hover:text-foreground  font-semibold tracking-tight p-1 rounded-xl hover:bg-secondary cursor-pointer transition-all duration-100"
+        >
+          <AiOutlineGithub></AiOutlineGithub>
+        </h3>
+      </div>
       <ThemeSwitcher />
     </div>
   );
