@@ -20,7 +20,7 @@ export default function Home() {
       >
         {" "}
         <h1 className=" text-5xl  tracking-tighter font-semibold p-0.5  text-center pointer-events-none lg:text-6xl grad">
-          Creating software of the Future
+          Creating the software of Tomorrow
         </h1>{" "}
         <p
           className="text-muted-foreground -tracking-tight leading-8 max-w-[90%] sm:max-w-[550px] lg:text-lg  
