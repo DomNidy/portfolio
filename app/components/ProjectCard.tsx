@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
-import { Fragment } from "react";
 import React from "react";
 import { Link } from "lucide-react";
 
@@ -18,8 +17,8 @@ export default function ProjectCard({
   technologyImageSrcArray: any[];
 }) {
   return (
-    <div className="flex flex-col bg-card/50 px-4 py-2 rounded-lg sm:w-[540px] ">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center animate-card-down">
+    <div className="flex flex-col bg-card/50 px-4 py-2 rounded-lg sm:w-[540px] shadow-md">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center ">
         {projectURL ? (
           <a
             href="https://playportal.app"

@@ -22,9 +22,8 @@ import javaIcon from "@/public/java-icon.svg";
 import gitIcon from "@/public/git-icon.svg";
 
 import { Button } from "@/components/ui/button";
-import Carousel from "./components/Carousel";
-import AboutMe from "./components/AboutMe";
 import ProjectCard from "./components/ProjectCard";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Home() {
   return (
@@ -65,19 +64,32 @@ export default function Home() {
           Work with me
         </Button>
       </div>
-
       <div className="bg-primary-foreground/20 flex-grow items-center flex flex-col pt-8 gap-24">
         <div className="flex flex-col items-center gap-4 sm:gap-5">
           <h1 className="text-4xl  font-semibold   pointer-events-none">
             About Me
           </h1>
           <div className="flex flex-col gap-14">
-            <AboutMe />
+            <div className="flex flex-col items-center">
+              <ScrollArea className="px-2 ">
+                <div className="flex flex-col gap-12 items-center">
+                  <p className="text-muted-foreground leading-[2.025rem]  text-[17px] text-justify pointer-events-none  max-w-[85%] md:max-w-[70%] lg:max-w-2xl ">
+                    Hi there, I{"'m"} <span>Dominic Nidy!</span> I{"'"}ve been
+                    programming since I was around 12 years old. I{"'ve"} always
+                    been interested in building things and coding was one of my
+                    avenues for that. I had many things I wanted to create;
+                    games, apps, and websites. That was part of what piqued my
+                    curiosity in programming; and I{"'ve"} been failing forward
+                    ever since.
+                  </p>
+                </div>
+              </ScrollArea>
+            </div>
           </div>
         </div>
         <div className="flex flex-col items-center gap-4 sm:gap-5 max-w-lg px-4">
           <h1 className="text-4xl  font-semibold   pointer-events-none">
-            Some stuff I built
+            Some stuff I built:
           </h1>
           <ProjectCard
             descriptionText="Playportal is a full stack application which allows users to
@@ -91,132 +103,141 @@ export default function Home() {
               dockerIcon,
               firebaseIcon,
               pythonIcon,
-              googlecloudIcon
+              googlecloudIcon,
             ]}
             projectImageSrc={playportalImage}
             titleText="Playportal.app"
             projectURL="https://playportal.app"
           />
-        </div>{" "}
-        <div className="flex flex-col items-center gap-4 sm:gap-5 max-w-lg px-4">
-          <h1 className="text-4xl  font-semibold   pointer-events-none">
-            My skills
+          <h1 className="text-4xl  mt-16 font-semibold   pointer-events-none">
+            My arsenal:
           </h1>
-          <h3 className="text-2xl font-medium tracking-tighter underline">
-            Programming Languages:
-          </h3>
-          <div className="grid grid-cols-3 w-full gap-4 ">
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={typescriptIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">TypeScript</span>
-            </div>
 
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={javascriptIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">JavaScript</span>
-            </div>
+          <div className="flex flex-col items-center gap-y-8 px-4 py-4 bg-card/50 rounded-lg sm:w-[540px]  shadow-md">
+            <h3 className="text-2xl font-medium tracking-tighter ">
+              Programming Languages:
+            </h3>
+            <div className="grid grid-cols-3 gap-4 w-full place-content-evenly ">
+              <div className="flex-row gap-2  flex items-center  ">
+                <Image src={typescriptIcon} alt="" width={24} />
+                <span className="tracking-tighter font-medium">TypeScript</span>
+              </div>
 
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={pythonIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">Python</span>
-            </div>
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={javascriptIcon} alt="" width={24} />
+                <span className="tracking-tighter  font-medium">
+                  JavaScript
+                </span>
+              </div>
 
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={csharpIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">C#</span>
-            </div>
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={pythonIcon} alt="" width={24} />
+                <span className="tracking-tighter  font-medium">Python</span>
+              </div>
 
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={javaIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">Java</span>
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={csharpIcon} alt="" width={24} />
+                <span className="tracking-tighter  font-medium">C#</span>
+              </div>
+
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={javaIcon} alt="" width={24} />
+                <span className="tracking-tighter font-medium">Java</span>
+              </div>
             </div>
           </div>
 
-          <h3 className="text-2xl font-medium tracking-tighter underline">
-            Front-end Tech/Frameworks
-          </h3>
-          <div className="grid grid-cols-3  w-full gap-4">
-            <div className="flex-row gap-2 flex items-center">
-              <Image
-                src={nextjsIcon}
-                alt=""
-                width={32}
-                className="dark:invert"
-              />
-              <span className="tracking-tight font-medium">Next.js</span>
-            </div>
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={reactIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium ">React</span>
-            </div>{" "}
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={htmlIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">HTML</span>
-            </div>{" "}
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={cssIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">CSS</span>
-            </div>{" "}
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={tailwindcssIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">Tailwind</span>
-            </div>
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={mongodbIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">MongoDB</span>
-            </div>
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={firebaseIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">Firebase</span>
-            </div>
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={mysqlIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">MySQL</span>
-            </div>{" "}
-          </div>
-
-          <h3 className="text-2xl font-medium tracking-tighter underline">
-            DevOps:
-          </h3>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={gitIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">Git</span>
-            </div>{" "}
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={dockerIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">Docker</span>
-            </div>
-            <div className="flex-row gap-2 flex items-center">
-              <Image
-                src={githubIcon}
-                alt=""
-                width={32}
-                className="dark:invert"
-              />
-              <span className="tracking-tight font-medium ">GitHub</span>
-            </div>{" "}
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={googlecloudIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">Google Cloud</span>
+          <div className="flex flex-col items-center gap-y-8 px-4 py-2 bg-card/50 rounded-lg sm:w-[540px]  shadow-md">
+            <h3 className="text-2xl font-medium tracking-tighter ">
+              Front-end Tech/Frameworks
+            </h3>
+            <div className="grid grid-cols-3  w-full gap-4">
+              <div className="flex-row gap-2 flex items-center">
+                <Image
+                  src={nextjsIcon}
+                  alt=""
+                  width={32}
+                  className="dark:invert"
+                />
+                <span className="tracking-tighter font-medium">Next.js</span>
+              </div>
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={reactIcon} alt="" width={32} />
+                <span className="tracking-tighter font-medium ">React</span>
+              </div>{" "}
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={htmlIcon} alt="" width={32} />
+                <span className="tracking-tighter font-medium">HTML</span>
+              </div>{" "}
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={cssIcon} alt="" width={32} />
+                <span className="tracking-tighter font-medium">CSS</span>
+              </div>{" "}
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={tailwindcssIcon} alt="" width={32} />
+                <span className="tracking-tighter font-medium">Tailwind</span>
+              </div>
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={mongodbIcon} alt="" width={32} />
+                <span className="tracking-tighter font-medium">MongoDB</span>
+              </div>
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={firebaseIcon} alt="" width={32} />
+                <span className="tracking-tighter font-medium">Firebase</span>
+              </div>
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={mysqlIcon} alt="" width={32} />
+                <span className="tracking-tighter font-medium">MySQL</span>
+              </div>{" "}
             </div>
           </div>
-
-          <h3 className="text-2xl font-medium tracking-tight underline">
-            Software:
-          </h3>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={figmaIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">Figma</span>
-            </div>{" "}
-            <div className="flex-row gap-2 flex items-center">
-              <Image src={jiraIcon} alt="" width={32} />
-              <span className="tracking-tight font-medium">Jira</span>
+          <div className="flex flex-col items-center gap-y-8 px-4 py-2 bg-card/50 rounded-lg sm:w-[540px]  shadow-md">
+            <h3 className="text-2xl font-medium tracking-tighter ">
+              DevOps:
+            </h3>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={gitIcon} alt="" width={32} />
+                <span className="tracking-tighter font-medium">Git</span>
+              </div>{" "}
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={dockerIcon} alt="" width={32} />
+                <span className="tracking-tighter font-medium">Docker</span>
+              </div>
+              <div className="flex-row gap-2 flex items-center">
+                <Image
+                  src={githubIcon}
+                  alt=""
+                  width={32}
+                  className="dark:invert"
+                />
+                <span className="tracking-tighter font-medium ">GitHub</span>
+              </div>{" "}
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={googlecloudIcon} alt="" width={32} />
+                <span className="tracking-tighter font-medium">
+                  Google Cloud
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-y-8 w-max px-4 py-2 bg-card/50 rounded-lg sm:w-[540px]  shadow-md">
+            <h3 className="text-2xl font-medium tracking-tighter ">
+              Software:
+            </h3>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={figmaIcon} alt="" width={32} />
+                <span className="tracking-tighter font-medium">Figma</span>
+              </div>{" "}
+              <div className="flex-row gap-2 flex items-center">
+                <Image src={jiraIcon} alt="" width={32} />
+                <span className="tracking-tighter font-medium">Jira</span>
+              </div>
             </div>
           </div>
         </div>{" "}
-      </div>
+      </div>{" "}
     </div>
   );
 }
