@@ -18,12 +18,19 @@ import playportalImage from "@/public/playportal-image.svg";
 import reactIcon from "@/public/react-icon.svg";
 import dockerIcon from "@/public/docker-icon.svg";
 import firebaseIcon from "@/public/firebase-icon.svg";
-import javaIcon from "@/public/java-icon.svg";
 import gitIcon from "@/public/git-icon.svg";
-
 import { Button } from "@/components/ui/button";
 import ProjectCard from "./components/ProjectCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Input } from "@/components/ui/input";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function Home() {
   return (
@@ -60,9 +67,26 @@ export default function Home() {
           <Image src={htmlIcon} alt="HTML" className="grayscale w-8 h-8" />
           <Image src={cssIcon} alt="HTML" className="grayscale w-8 h-8" />
         </div>
-        <Button className="relative top-8 sm:top-20 grad -z-0">
-          Work with me
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button className="relative top-8 sm:top-20 grad -z-0">
+              Work with me
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Contact Info</DialogTitle>
+              <DialogDescription>
+                Here{"'s"} my contact information
+              </DialogDescription>
+              <Input
+                variant="copy"
+                className="w-fit rounded-md"
+                value={"dominicnidy01@gmail.com"}
+              />
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
       </div>
       <div className="bg-primary-foreground/20 flex-grow items-center flex flex-col pt-8 gap-24">
         <div className="flex flex-col items-center gap-4 sm:gap-5">
@@ -139,11 +163,6 @@ export default function Home() {
                 <Image src={csharpIcon} alt="" width={24} />
                 <span className="tracking-tighter  font-medium">C#</span>
               </div>
-
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={javaIcon} alt="" width={24} />
-                <span className="tracking-tighter font-medium">Java</span>
-              </div>
             </div>
           </div>
 
@@ -192,9 +211,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col items-center gap-y-8 px-4 py-2 bg-card/50 rounded-lg sm:w-[540px]  shadow-md">
-            <h3 className="text-2xl font-medium tracking-tighter ">
-              DevOps:
-            </h3>
+            <h3 className="text-2xl font-medium tracking-tighter ">DevOps:</h3>
             <div className="grid grid-cols-3 gap-4">
               <div className="flex-row gap-2 flex items-center">
                 <Image src={gitIcon} alt="" width={32} />
