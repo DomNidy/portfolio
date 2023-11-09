@@ -21,7 +21,7 @@ export default function ProjectCard({
       <div className="flex flex-col sm:flex-row items-start sm:items-center ">
         {projectURL ? (
           <a
-            href="https://playportal.app"
+            href={projectURL}
             target="_blank"
             className="text-2xl mb-2 font-semibold tracking-tighter underline z"
           >
@@ -37,7 +37,6 @@ export default function ProjectCard({
             {titleText}
           </h2>
         )}{" "}
- 
         <div className="ml-4 h-6 flex flex-row gap-3 mb-1  line-clamp-2 items-center">
           {technologyImageSrcArray.map((imageSrc, idx) => {
             // If we are on the last index, dont return a separator
@@ -56,12 +55,14 @@ export default function ProjectCard({
       <div>
         <Image
           src={projectImageSrc}
-          alt="Playportal image"
+          alt="Project image"
           className="h-fit float-right w-[125px] sm:w-[160px] m-1.5"
           width={160}
         />
 
-        <p className="text-muted-foreground  ">{descriptionText}</p>
+        <p className="text-muted-foreground  leading-6  text-[16px]">
+          {descriptionText}
+        </p>
       </div>
     </div>
   );

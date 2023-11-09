@@ -30,7 +30,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           >
             <input
               type={type}
-              className="border-none outline-none bg-none"
+              className="border-none outline-none bg-white/0 "
               ref={ref}
               {...props}
             />

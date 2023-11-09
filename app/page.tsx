@@ -19,6 +19,7 @@ import reactIcon from "@/public/react-icon.svg";
 import dockerIcon from "@/public/docker-icon.svg";
 import firebaseIcon from "@/public/firebase-icon.svg";
 import gitIcon from "@/public/git-icon.svg";
+import planetbuyIcon from "@/public/planetbuy-icon.svg"
 import { Button } from "@/components/ui/button";
 import ProjectCard from "./components/ProjectCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -90,14 +91,14 @@ export default function Home() {
       </div>
       <div className="bg-primary-foreground/20 flex-grow items-center flex flex-col pt-8 gap-24">
         <div className="flex flex-col items-center gap-4 sm:gap-5">
-          <h1 className="text-4xl  font-semibold   pointer-events-none">
+          <h1 className="text-4xl font-semibold pointer-events-none">
             About Me
           </h1>
           <div className="flex flex-col gap-14">
             <div className="flex flex-col items-center">
               <ScrollArea className="px-2 ">
                 <div className="flex flex-col gap-12 items-center">
-                  <p className="text-muted-foreground leading-[2.025rem]  text-[17px] text-justify pointer-events-none  max-w-[85%] md:max-w-[70%] lg:max-w-2xl ">
+                  <p className="text-muted-foreground leading-[2.025rem]  text-center text-[19px] sm:text-justify pointer-events-none  max-w-[85%] md:max-w-[70%] lg:max-w-2xl ">
                     Hi there, I{"'m"} <span>Dominic Nidy!</span> I{"'"}ve been
                     programming since I was around 12 years old. I{"'ve"} always
                     been interested in building things and coding was one of my
@@ -111,7 +112,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-4 sm:gap-5 max-w-lg px-4">
+        <div className="flex flex-col items-center gap-8 max-w-lg px-4">
           <h1 className="text-4xl  font-semibold   pointer-events-none">
             Some stuff I built:
           </h1>
@@ -132,6 +133,21 @@ export default function Home() {
             projectImageSrc={playportalImage}
             titleText="Playportal.app"
             projectURL="https://playportal.app"
+          />
+
+          <ProjectCard
+            descriptionText='Planetbuy is a full-stack app developed within the NextJS framework. It designed to implement 
+            functionality similar to real-estate platforms like airbnb. However, as the same suggests; on Planetbuy you are 
+            "buying planets" (fictional planets, with fictional currency).'
+            technologyImageSrcArray={[
+              reactIcon,
+              typescriptIcon,
+              mysqlIcon,
+              googlecloudIcon,
+            ]}
+            projectImageSrc={planetbuyIcon}
+            titleText="Planetbuy.app"
+            projectURL="https://planetbuy.vercel.app/"
           />
           <h1 className="text-4xl  mt-16 font-semibold   pointer-events-none">
             My arsenal:
@@ -238,8 +254,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center gap-y-8 w-max px-4 py-2 bg-card/50 rounded-lg sm:w-[540px]  shadow-md">
-            <h3 className="text-2xl font-medium tracking-tighter ">
+          <div className="flex flex-col items-center gap-y-8 w-max px-4 mb-12 py-2 bg-card/50 rounded-lg sm:w-[540px]  shadow-md">
+            <h3 className="text-2xl font-medium tracking-tighter">
               Software:
             </h3>
             <div className="grid grid-cols-3 gap-4">
