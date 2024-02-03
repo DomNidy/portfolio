@@ -2,14 +2,17 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import React from "react";
 import { Link } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function ProjectCard({
+  className,
   titleText,
   descriptionText,
   projectURL,
   projectImageSrc,
   technologyImageSrcArray,
 }: {
+  className: string | undefined;
   titleText: string;
   descriptionText: string;
   projectURL?: string;
@@ -17,13 +20,21 @@ export default function ProjectCard({
   technologyImageSrcArray: any[];
 }) {
   return (
-    <div className="flex flex-col bg-card/50 px-4 py-2 rounded-lg sm:w-[540px] shadow-md">
+    <div
+      style={{
+        animation: "fillBorder 2s forwards forwards",
+      }}
+      className={cn(
+        className,
+        "flex group flex-col bg-card/50 px-4 py-2 rounded-lg sm:w-[540px] shadow-md  border-2 transition-all"
+      )}
+    >
       <div className="flex flex-col sm:flex-row items-start sm:items-center ">
         {projectURL ? (
           <a
             href={projectURL}
             target="_blank"
-            className="text-2xl mb-2 font-semibold tracking-tighter underline z"
+            className="text-2xl mb-2 font-semibold tracking-tighter underline"
           >
             {titleText}
             <Link
@@ -33,9 +44,7 @@ export default function ProjectCard({
             />
           </a>
         ) : (
-          <h2 className="text-2xl mb-2 font-semibold tracking-tigher ">
-            {titleText}
-          </h2>
+          <h2 className={cn("group-hover:", className)}>{titleText}</h2>
         )}{" "}
         <div className="ml-4 h-6 flex flex-row gap-3 mb-1  line-clamp-2 items-center">
           {technologyImageSrcArray.map((imageSrc, idx) => {

@@ -8,7 +8,7 @@ import jiraIcon from "@/public/jira-icon.svg";
 import pythonIcon from "@/public/python-icon.svg";
 import figmaIcon from "@/public/figma-icon.svg";
 import mongodbIcon from "@/public/mongodb-icon.svg";
-import githubIcon from "@/public/github-icon.svg";
+import awsIcon from "@/public/aws-icon.svg";
 import mysqlIcon from "@/public/mysql-icon.svg";
 import typescriptIcon from "@/public/typescript-icon.svg";
 import javascriptIcon from "@/public/javascript-icon.svg";
@@ -19,7 +19,7 @@ import reactIcon from "@/public/react-icon.svg";
 import dockerIcon from "@/public/docker-icon.svg";
 import firebaseIcon from "@/public/firebase-icon.svg";
 import gitIcon from "@/public/git-icon.svg";
-import planetbuyIcon from "@/public/planetbuy-icon.svg"
+import planetbuyIcon from "@/public/planetbuy-icon.svg";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "./components/ProjectCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -32,6 +32,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import SkillContainer from "@/components/skill-container";
+import SkillImageContainer from "@/components/skill-image-container";
 
 export default function Home() {
   return (
@@ -50,7 +52,7 @@ export default function Home() {
           className="text-muted-foreground -tracking-tight leading-9 max-w-[90%] sm:max-w-[550px] lg:text-lg  
                       pointer-events-none md:max-w-[700px] text-center"
         >
-          Full Stack, CI/CD, UI/UX, System Design, Algorithms.
+          Software Engineer
         </p>
         <div className="flex flex-row justify-evenly w-2/5  h-fit place-self-center gap-4 sm:gap-2">
           <Image src={csharpIcon} alt="Csharp" className="grayscale w-8 h-8" />
@@ -117,6 +119,7 @@ export default function Home() {
             Some stuff I built:
           </h1>
           <ProjectCard
+            className="hover:border-purple-700"
             descriptionText="Playportal is a full stack application which allows users to
             transfer playlists between music streaming services. The website
             was built using React & NextJS. The playlist transferring
@@ -136,6 +139,7 @@ export default function Home() {
           />
 
           <ProjectCard
+            className="hover:border-blue-900"
             descriptionText='Planetbuy is a full-stack app developed within the NextJS framework. It designed to implement 
             functionality similar to real-estate platforms like airbnb. However, as the same suggests; on Planetbuy you are 
             "buying planets" (fictional planets, with fictional currency).'
@@ -149,126 +153,103 @@ export default function Home() {
             titleText="Planetbuy.app"
             projectURL="https://planetbuy.vercel.app/"
           />
-          <h1 className="text-4xl  mt-16 font-semibold   pointer-events-none">
-            My arsenal:
-          </h1>
-
-          <div className="flex flex-col items-center gap-y-8 px-4 py-4 bg-card/50 rounded-lg sm:w-[540px]  shadow-md">
-            <h3 className="text-2xl font-medium tracking-tighter ">
-              Programming Languages:
-            </h3>
-            <div className="grid grid-cols-3 gap-4 w-full place-content-evenly ">
-              <div className="flex-row gap-2  flex items-center  ">
-                <Image src={typescriptIcon} alt="" width={24} />
-                <span className="tracking-tighter font-medium">TypeScript</span>
-              </div>
-
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={javascriptIcon} alt="" width={24} />
-                <span className="tracking-tighter  font-medium">
-                  JavaScript
-                </span>
-              </div>
-
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={pythonIcon} alt="" width={24} />
-                <span className="tracking-tighter  font-medium">Python</span>
-              </div>
-
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={csharpIcon} alt="" width={24} />
-                <span className="tracking-tighter  font-medium">C#</span>
-              </div>
-            </div>
+          <div className="flex flex-col text-center">
+            <h1 className="text-4xl  mt-16 font-semibold   pointer-events-none">
+              My arsenal:
+            </h1>
+            <p className="text-muted-foreground leading-[2.025rem]  text-center text-[16px] sm:text-justify pointer-events-none  max-w-[85%] md:max-w-[70%] lg:max-w-2xl">
+              The tech I use to build my apps.
+            </p>
           </div>
 
-          <div className="flex flex-col items-center gap-y-8 px-4 py-2 bg-card/50 rounded-lg sm:w-[540px]  shadow-md">
-            <h3 className="text-2xl font-medium tracking-tighter ">
-              Front-end Tech/Frameworks
-            </h3>
-            <div className="grid grid-cols-3  w-full gap-4">
-              <div className="flex-row gap-2 flex items-center">
-                <Image
-                  src={nextjsIcon}
-                  alt=""
-                  width={32}
-                  className="dark:invert"
-                />
-                <span className="tracking-tighter font-medium">Next.js</span>
-              </div>
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={reactIcon} alt="" width={32} />
-                <span className="tracking-tighter font-medium ">React</span>
-              </div>{" "}
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={htmlIcon} alt="" width={32} />
-                <span className="tracking-tighter font-medium">HTML</span>
-              </div>{" "}
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={cssIcon} alt="" width={32} />
-                <span className="tracking-tighter font-medium">CSS</span>
-              </div>{" "}
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={tailwindcssIcon} alt="" width={32} />
-                <span className="tracking-tighter font-medium">Tailwind</span>
-              </div>
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={mongodbIcon} alt="" width={32} />
-                <span className="tracking-tighter font-medium">MongoDB</span>
-              </div>
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={firebaseIcon} alt="" width={32} />
-                <span className="tracking-tighter font-medium">Firebase</span>
-              </div>
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={mysqlIcon} alt="" width={32} />
-                <span className="tracking-tighter font-medium">MySQL</span>
-              </div>{" "}
-            </div>
-          </div>
-          <div className="flex flex-col items-center gap-y-8 px-4 py-2 bg-card/50 rounded-lg sm:w-[540px]  shadow-md">
-            <h3 className="text-2xl font-medium tracking-tighter ">DevOps:</h3>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={gitIcon} alt="" width={32} />
-                <span className="tracking-tighter font-medium">Git</span>
-              </div>{" "}
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={dockerIcon} alt="" width={32} />
-                <span className="tracking-tighter font-medium">Docker</span>
-              </div>
-              <div className="flex-row gap-2 flex items-center">
-                <Image
-                  src={githubIcon}
-                  alt=""
-                  width={32}
-                  className="dark:invert"
-                />
-                <span className="tracking-tighter font-medium ">GitHub</span>
-              </div>{" "}
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={googlecloudIcon} alt="" width={32} />
-                <span className="tracking-tighter font-medium">
-                  Google Cloud
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col items-center gap-y-8 w-max px-4 mb-12 py-2 bg-card/50 rounded-lg sm:w-[540px]  shadow-md">
-            <h3 className="text-2xl font-medium tracking-tighter">
-              Software:
-            </h3>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={figmaIcon} alt="" width={32} />
-                <span className="tracking-tighter font-medium">Figma</span>
-              </div>{" "}
-              <div className="flex-row gap-2 flex items-center">
-                <Image src={jiraIcon} alt="" width={32} />
-                <span className="tracking-tighter font-medium">Jira</span>
-              </div>
-            </div>
-          </div>
+          <SkillContainer titleText="Programming Languages">
+            <SkillImageContainer>
+              <Image src={typescriptIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">TypeScript</span>
+            </SkillImageContainer>
+            <SkillImageContainer>
+              <Image src={javascriptIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">JavaScript</span>
+            </SkillImageContainer>
+            <SkillImageContainer>
+              <Image src={pythonIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">Python</span>
+            </SkillImageContainer>
+            <SkillImageContainer>
+              <Image src={csharpIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">C#</span>
+            </SkillImageContainer>
+          </SkillContainer>
+
+          <SkillContainer
+            titleText="Front-end Tech"
+            orientation="vertical"
+          >
+            <SkillImageContainer>
+              <Image
+                src={nextjsIcon}
+                alt=""
+                width={32}
+                className="dark:invert"
+              />
+              <span className="tracking-tighter font-medium">Next.js</span>
+            </SkillImageContainer>
+            <SkillImageContainer>
+              <Image src={reactIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium ">React</span>
+            </SkillImageContainer>{" "}
+            <SkillImageContainer>
+              <Image src={htmlIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">HTML</span>
+            </SkillImageContainer>{" "}
+            <SkillImageContainer>
+              <Image src={cssIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">CSS</span>
+            </SkillImageContainer>{" "}
+            <SkillImageContainer>
+              <Image src={tailwindcssIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">Tailwind</span>
+            </SkillImageContainer>
+            <SkillImageContainer>
+              <Image src={figmaIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">Figma</span>
+            </SkillImageContainer>{" "}
+          </SkillContainer>
+
+          <SkillContainer titleText="Backend/DevOps" orientation="vertical">
+            <SkillImageContainer>
+              <Image src={mongodbIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">MongoDB</span>
+            </SkillImageContainer>
+            <SkillImageContainer>
+              <Image src={firebaseIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">Firebase</span>
+            </SkillImageContainer>
+            <SkillImageContainer>
+              <Image src={jiraIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">Jira</span>
+            </SkillImageContainer>
+            <SkillImageContainer>
+              <Image src={gitIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">Git</span>
+            </SkillImageContainer>
+            <SkillImageContainer>
+              <Image src={dockerIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">Docker</span>
+            </SkillImageContainer>
+            <SkillImageContainer>
+              <Image src={mysqlIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">MySQL</span>
+            </SkillImageContainer>
+            <SkillImageContainer>
+              <Image src={googlecloudIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">Google Cloud</span>
+            </SkillImageContainer>
+            <SkillImageContainer>
+              <Image src={awsIcon} alt="" width={32} />
+              <span className="tracking-tighter font-medium">AWS DynamoDB</span>
+            </SkillImageContainer>
+          </SkillContainer>
         </div>{" "}
       </div>{" "}
     </div>

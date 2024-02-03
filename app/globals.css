@@ -114,3 +114,16 @@
   height: 100px; 
   border: 1px solid black;
 }
+
+/* Step 1: Define a CSS class for the element you want to animate */
+.my-element {
+  border: 0 solid black;
+  animation: fillBorder 2s forwards;
+}
+
+/* Step 2: Define a CSS animation using @keyframes */
+@keyframes fillBorder {
+  to {
+    border-width: 5px;
+  }
+}
