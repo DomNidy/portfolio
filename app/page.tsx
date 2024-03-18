@@ -3,8 +3,10 @@ import Navbar from "./components/Navbar";
 import csharpIcon from "@/public/csharp-icon.svg";
 import googlecloudIcon from "@/public/googlecloud-icon.svg";
 import tailwindcssIcon from "@/public/tailwind-icon.svg";
+import nodejsIcon from "@/public/nodejs-icon.svg";
+import expressIcon from "@/public/express-icon.svg";
 import nextjsIcon from "@/public/next.svg";
-import jiraIcon from "@/public/jira-icon.svg";
+import cppIcon from "@/public/cpp-icon.svg";
 import pythonIcon from "@/public/python-icon.svg";
 import figmaIcon from "@/public/figma-icon.svg";
 import mongodbIcon from "@/public/mongodb-icon.svg";
@@ -18,7 +20,6 @@ import playportalImage from "@/public/playportal-image.svg";
 import reactIcon from "@/public/react-icon.svg";
 import dockerIcon from "@/public/docker-icon.svg";
 import firebaseIcon from "@/public/firebase-icon.svg";
-import gitIcon from "@/public/git-icon.svg";
 import planetbuyIcon from "@/public/planetbuy-icon.svg";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "./components/ProjectCard";
@@ -33,7 +34,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import SkillContainer from "@/components/skill-container";
-import SkillImageContainer from "@/components/skill-image-container";
+import { SkillImageContainer } from "@/components/skill-image-container";
 
 export default function Home() {
   return (
@@ -123,8 +124,8 @@ export default function Home() {
             descriptionText="Playportal is a full stack application which allows users to
             transfer playlists between music streaming services. The website
             was built using React & NextJS. The playlist transferring
-            service is hosted on google cloud to allow autoscaling of
-            containers based on traffic load."
+            service is containerized and hosted on google cloud, allowing autoscaling of
+            containers."
             technologyImageSrcArray={[
               reactIcon,
               typescriptIcon,
@@ -163,92 +164,33 @@ export default function Home() {
           </div>
 
           <SkillContainer titleText="Programming Languages">
-            <SkillImageContainer>
-              <Image src={typescriptIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">TypeScript</span>
-            </SkillImageContainer>
-            <SkillImageContainer>
-              <Image src={javascriptIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">JavaScript</span>
-            </SkillImageContainer>
-            <SkillImageContainer>
-              <Image src={pythonIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">Python</span>
-            </SkillImageContainer>
-            <SkillImageContainer>
-              <Image src={csharpIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">C#</span>
-            </SkillImageContainer>
+            <SkillImageContainer label="TypeScript" imgSrc={typescriptIcon} />
+            <SkillImageContainer label="JavaScript" imgSrc={javascriptIcon} />
+            <SkillImageContainer label="Python" imgSrc={pythonIcon} />
+            <SkillImageContainer label="C++" imgSrc={cppIcon} />
           </SkillContainer>
 
-          <SkillContainer
-            titleText="Front-end Tech"
-            orientation="vertical"
-          >
-            <SkillImageContainer>
-              <Image
-                src={nextjsIcon}
-                alt=""
-                width={32}
-                className="dark:invert"
-              />
-              <span className="tracking-tighter font-medium">Next.js</span>
-            </SkillImageContainer>
-            <SkillImageContainer>
-              <Image src={reactIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium ">React</span>
-            </SkillImageContainer>{" "}
-            <SkillImageContainer>
-              <Image src={htmlIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">HTML</span>
-            </SkillImageContainer>{" "}
-            <SkillImageContainer>
-              <Image src={cssIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">CSS</span>
-            </SkillImageContainer>{" "}
-            <SkillImageContainer>
-              <Image src={tailwindcssIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">Tailwind</span>
-            </SkillImageContainer>
-            <SkillImageContainer>
-              <Image src={figmaIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">Figma</span>
-            </SkillImageContainer>{" "}
+          <SkillContainer titleText="Front-end Tech" orientation="vertical">
+            <SkillImageContainer label="Next.js" imgSrc={nextjsIcon} />
+            <SkillImageContainer label="React" imgSrc={reactIcon} />
+            <SkillImageContainer label="HTML" imgSrc={htmlIcon} />
+            <SkillImageContainer label="CSS" imgSrc={cssIcon} />
+            <SkillImageContainer label="Tailwind" imgSrc={tailwindcssIcon} />
+            <SkillImageContainer label="Figma" imgSrc={figmaIcon} />
           </SkillContainer>
 
           <SkillContainer titleText="Backend/DevOps" orientation="vertical">
-            <SkillImageContainer>
-              <Image src={mongodbIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">MongoDB</span>
-            </SkillImageContainer>
-            <SkillImageContainer>
-              <Image src={firebaseIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">Firebase</span>
-            </SkillImageContainer>
-            <SkillImageContainer>
-              <Image src={jiraIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">Jira</span>
-            </SkillImageContainer>
-            <SkillImageContainer>
-              <Image src={gitIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">Git</span>
-            </SkillImageContainer>
-            <SkillImageContainer>
-              <Image src={dockerIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">Docker</span>
-            </SkillImageContainer>
-            <SkillImageContainer>
-              <Image src={mysqlIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">MySQL</span>
-            </SkillImageContainer>
-            <SkillImageContainer>
-              <Image src={googlecloudIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">Google Cloud</span>
-            </SkillImageContainer>
-            <SkillImageContainer>
-              <Image src={awsIcon} alt="" width={32} />
-              <span className="tracking-tighter font-medium">AWS DynamoDB</span>
-            </SkillImageContainer>
+            <SkillImageContainer label="Node.js" imgSrc={nodejsIcon} />
+            <SkillImageContainer label="Express" imgSrc={expressIcon} />
+            <SkillImageContainer label="MongoDB" imgSrc={mongodbIcon} />
+            <SkillImageContainer label="AWS" imgSrc={awsIcon} />
+            <SkillImageContainer label="Firebase" imgSrc={firebaseIcon} />
+            <SkillImageContainer label="Docker" imgSrc={dockerIcon} />
+            <SkillImageContainer label="MySQL" imgSrc={mysqlIcon} />
+            <SkillImageContainer
+              label="Google Cloud"
+              imgSrc={googlecloudIcon}
+            />
           </SkillContainer>
         </div>{" "}
       </div>{" "}
